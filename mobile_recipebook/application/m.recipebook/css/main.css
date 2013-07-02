@@ -1,0 +1,373 @@
+/*
+Project RecipeBook
+authors: Brad Cerny and Simon Figueroa
+February 2013
+*/
+
+/*------------------CSS RESET----------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*----------------------------------------------------------*/
+.wrapper{
+	width: 100%;
+	background: url('../img/furley_bg.png') 0 0 repeat;
+	color: #7f7f7f;
+	text-align: center;
+	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+
+h1{
+	text-align: center;
+}
+
+.step{
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="checkbox"]{
+	color: #7f7f7f;
+}
+
+.login_form{
+	vertical-align: middle;
+}
+
+header{
+	margin-bottom: 2em;
+}
+
+p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1em;
+}
+
+#login_page .button{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.accordion li, .accordion p{
+	font-size: 1em;
+	text-align: left;
+	line-height: 1.3em;
+}
+
+.accordion ul{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#details_page h2{
+	margin-top: 2%;
+	text-align: left;
+}
+
+#details_page img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.recipe_name{
+	font-size: 1.125em;
+	color: #c43922;
+}
+
+.category{
+	font-size: .75em;
+	margin-bottom: .5em;
+}
+
+#fb_sign_up_msg{
+	display: none;
+}
+
+#terms {
+	text-align: left;
+	width: 70%;
+	margin: 0 auto;
+	border-bottom: 1px solid #8e8e8e;
+	margin-bottom: 20px;
+}
+
+html.ui-mobile body.ui-mobile-viewport div.wrapper a.ui-link {
+	text-decoration: none;
+	color: #C33B27;
+	font-size: 0.8em;
+	font-style: normal;
+	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+	
+}
+
+#terms h3 {
+	font-size: 1.2em;
+}
+
+#terms h2 {
+	font-size: 1.3em;
+}
+
+#copyright {
+	text-align: left;
+	width: 70%;
+	margin: 0 auto;
+	border-bottom: 1px solid #8e8e8e;
+	margin-bottom: 20px;
+}
+
+html.ui-mobile body.ui-mobile-viewport div.wrapper a.ui-link {
+	text-decoration: none;
+	color: #C33B27;
+	font-size: 0.8em;
+	font-style: normal;
+	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+	
+}
+
+#copyright ul {
+	list-style: circle;
+}
+
+#copyright h3 {
+	font-size: 1.2em;
+}
+
+#copyright h2 {
+	font-size: 1.3em;
+}
+
+#contact h2 {
+	font-size: 1.3em;
+}
+
+.button{
+	width: 47.5%;
+	float: left;
+}
+
+.button:first-child{
+	margin-right: 5%;
+}
+
+textarea{
+	width: 100%;
+	height: 7.5em;
+}
+
+#review_list{
+	font-size: 1.2em;
+	line-height: 1.35em;
+}
+
+#review_list span{
+	font-weight: bold;
+}
+
+#add_errors{
+	display: none;
+	font-size: 1em;
+	border: 1px solid #c43922;
+}
+
+.ui-icon-delete_icon{
+	background-image: url(../img/delete_icon.png);
+}
+
+.ui-icon-edit_icon{
+	background-image: url(../img/edit_icon.png);
+}
+
+#login_page ul{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#login_page li{
+	display: inline;
+	border-left: 1px solid #c43922;
+	padding-left: 2%;
+	padding-right: 1%;
+}
+
+#login_page li:first-child{
+	border: none;
+}
+
+#footer_menu li{
+	display: inline;
+	border-left: 1px solid #c43922;
+	padding-left: 2%;
+	padding-right: 1%;
+}
+
+#footer_menu li:first-child{
+	border: none;
+}
+
+#footer_menu ul{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#login_page label{
+	width: 70%;
+	float: left;
+	text-align: right;
+	vertical-align: middle;
+	line-height: 1.5em;
+}
+
+#p_toggle{
+	width: 30%,
+	float: left;
+}
+
+#fb_share{
+	cursor: pointer;
+	width: 20%;
+	height: 20%;
+}
+
+
+/*------------------Block of NAV STYLES -------------------*/
+.nav-recipeBookBtn .ui-btn .ui-btn-inner { padding-top: 55px !important; }
+.nav-recipeBookBtn .ui-btn .ui-icon { width: 35px!important; height: 36px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+#addRecipeBtn .ui-icon { background:  url(../img/foodBtn.png) 50% 50% no-repeat; background-size: 23px 40px; margin-top: 5px;}
+#myRecipesBtn .ui-icon { background:  url(../img/recipesBtn.png) 50% 50% no-repeat; background-size: 27px 35px; margin-top: 5px; }
+#logoutBtn .ui-icon { background:  url(../img/logBtn.png) 50% 50% no-repeat;  background-size: 38px 38px; margin-top: 5px; }
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+/* Styles */
+h1 img{
+	width: 70%;
+}
+
+#login_page label{
+	width: 50%;
+	float: left;
+	text-align: right;
+	vertical-align: middle;
+	line-height: 1.5em;
+}
+
+#p_toggle{
+	width: 50%,
+	float: left;
+}
+
+#fb_share{
+	width: 40%;
+	height: 40%;
+}
+
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px){
+/* Styles */
+
+input[type="text"], input[type="password"]{
+	/*width: 50%;*/
+	margin: 1% auto;
+}
+
+#signup input[type="text"], #signup input[type="password"]{
+	width: 50%;
+}
+
+.add_options{
+	width: 50%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.add_options input[type="text"],  .add_options input[type="password"]{
+	width: 100%;
+}
+
+.login_options{
+	/*width: 50%;*/
+	margin: 0 auto;
+}
+
+#signup .btn_holder{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.login_form{
+	background: #000;
+}
+
+form{
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+
+#login_page form{
+	width: 50%;
+}
+
+#footer_menu{
+	float: left;
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+}
